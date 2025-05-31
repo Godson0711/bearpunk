@@ -1,0 +1,271 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: #0d0d0d;
+  color: #fff;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Navbar */
+.header {
+  background: linear-gradient(to right, #2e2e3a, #434354);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #fca311, #ff00cc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.nav-links a:hover {
+  background: #fca311;
+  color: #000;
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  background: linear-gradient(to right, #1a1a2e, #fca311);
+  padding: 6rem 1rem;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.mint-button {
+  background: #fca311;
+  color: #111;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Carousel Section */
+.carousel-section {
+  background: #1a1a1a;
+  padding: 3rem 0;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem 0;
+  scroll-behavior: smooth;
+  animation: scroll-carousel 30s linear infinite;
+}
+
+@keyframes scroll-carousel {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.carousel img {
+  height: 120px;
+  border-radius: 10px;
+}
+
+/* Whitepaper */
+.whitepaper-section {
+  text-align: center;
+}
+
+.whitepaper-section .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #fca311;
+  color: #111;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+}
+
+/* Roadmap */
+.roadmap-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.roadmap-section li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #444;
+}
+
+/* Team Section */
+.team-section {
+  background: #2a2a2a;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.team-grid {
+  display: flex;
+  overflow-x: auto;
+  gap: 2rem;
+  padding: 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+.team-member {
+  flex: 0 0 220px;
+  scroll-snap-align: start;
+  background: #333;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.team-member img {
+  width: 100%;
+  height: auto;
+  max-height: 180px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.team-member h3 {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.team-member p {
+  color: #bbb;
+  font-size: 0.9rem;
+}
+
+/* Game Section */
+.game-section {
+  padding: 3rem 0;
+  text-align: center;
+  background: #111;
+}
+
+.game-section img {
+  max-width: 90%;
+  height: auto;
+  max-height: 300px;
+  border-radius: 10px;
+  margin-top: 1.5rem;
+}
+
+/* Contact Section */
+.contact-section {
+  background: #1a1a1a;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.contact-icons a {
+  margin: 0 1rem;
+  color: #fca311;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Back to Top */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #fca311;
+  color: #111;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    background: #222;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    display: none;
+    padding: 1rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .carousel img {
+    height: 100px;
+  }
+
+  .team-grid {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+}
